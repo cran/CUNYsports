@@ -1,0 +1,36 @@
+Package: CUNYsports
+Type: Package
+Title: Accessible Collegiate Athletics Data from the City University of
+        New York (CUNY)
+Version: 0.1.0
+Authors@R: 
+    person("Christian", "Martinez", 
+             email = "c.martinez0@outlook.com", 
+             role = c("aut", "cre"),
+             comment = c(
+               GitHub = "martinezc1",
+               ORCID = "0009-0005-6026-6454"))
+Description: Provides access to collegiate athletics data from the City University
+    of New York (CUNY), the largest urban public university system in the United
+    States. Includes tools for discovering and retrieving sports data from an
+    included SQLite database. The data covers individual CUNY schools, players, 
+    games, seasons, and other aspects of CUNY athletics, providing accessible datasets for
+    teaching, student learning, and sports analytics.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.1.0)
+Imports: DBI, dplyr, RSQLite, stringr, rlang, tibble
+Suggests: ggplot2, knitr, rmarkdown, dbplyr
+VignetteBuilder: knitr
+URL: https://nyc-open-data-lab.github.io/CUNYsports/,
+        https://github.com/nyc-open-data-lab/CUNYsports
+BugReports: https://github.com/nyc-open-data-lab/CUNYsports/issues
+Config/roxygen2/version: 8.1.0
+NeedsCompilation: no
+Packaged: 2026-10-07 15:32:40 UTC; christianmartinez
+Author: Christian Martinez [aut, cre] (GitHub: martinezc1, ORCID:
+    <https://orcid.org/0009-0005-6026-6454>)
+Maintainer: Christian Martinez <c.martinez0@outlook.com>
+Repository: CRAN
+Date/Publication: 2026-10-18 14:20:08 UTC

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Christian Martinez" />
+
+
+<title>Getting Started with CUNYsports</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Getting Started with CUNYsports</h1>
+<h4 class="author">Christian Martinez</h4>
+
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(CUNYsports)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Welcome to <code>CUNYsports</code>, an R package for accessing and
+exploring collegiate athletics data from the <strong>City University of
+New York (CUNY)</strong>.</p>
+<p>CUNY athletics data are publicly available across individual college
+athletics websites, but working with these data at scale can require
+substantial scraping, cleaning, standardization, and organization.</p>
+<p><code>CUNYsports</code> provides a centralized interface for working
+with cleaned and organized CUNY athletics data directly in R.</p>
+<p>The package includes an SQLite database containing information about
+teams, players, games, seasons, schools, opponents, and other aspects of
+CUNY athletics. Rather than requiring users to interact with the
+database directly, <code>CUNYsports</code> provides functions for
+discovering, documenting, and retrieving the available data.</p>
+<p>The basic workflow is:</p>
+<p><strong>Discover → Understand → Retrieve → Analyze</strong></p>
+<p>The initial release of <code>CUNYsports</code> focuses on
+<strong>CUNY men’s and women’s basketball</strong>, with the database
+designed to support additional sports in the future.</p>
+</div>
+<div id="discovering-available-data" class="section level2">
+<h2>Discovering Available Data</h2>
+<p>The first step when using <code>CUNYsports</code> is figuring out
+what data are available.</p>
+<div id="the-cuny_table_names-function" class="section level3">
+<h3>The <code>cuny_table_names()</code> function</h3>
+<p>The simplest way to explore the database is with
+<code>cuny_table_names()</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">cuny_table_names</span>()</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 23 × 1</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt;    table_name                                         </span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                                              </span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt;  1 basketball_all_cat_leaders_final                   </span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt;  2 basketball_all_seasons_player_averages_final       </span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt;  3 basketball_all_seasons_player_conference_final     </span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt;  4 basketball_all_seasons_player_overall_final        </span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt;  5 basketball_all_seasons_player_scoring_final        </span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt;  6 basketball_all_seasons_player_team_averages_final  </span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt;  7 basketball_all_seasons_player_team_conference_final</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt;  8 basketball_all_seasons_player_team_overall_final   </span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt;  9 basketball_all_seasons_player_team_scoring_final   </span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; 10 basketball_all_seasons_team_final                  </span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; # ℹ 13 more rows</span></span></code></pre></div>
+<p>This returns the names of all tables currently available in the CUNY
+Sports database.</p>
+<p>The database contains both analytical tables and dimension tables.
+Basketball tables begin with <code>basketball_</code>, while dimension
+tables such as <code>dim_players</code> and <code>dim_schools</code>
+provide information used throughout the database.</p>
+</div>
+<div id="the-cuny_find_tables-function" class="section level3">
+<h3>The <code>cuny_find_tables()</code> function</h3>
+<p>As the database grows, users may not know the exact name of the table
+they need.</p>
+<p>The <code>cuny_find_tables()</code> function allows users to search
+the table catalog using a keyword.</p>
+<p>For example, we can search for tables related to player data:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">cuny_find_tables</span>(<span class="st">&quot;player&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 12 × 11</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt;    table_name              display_name description grain season_coverage source</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                   &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt; </span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;  1 dim_players             Player Dime… Lookup tab… One … 2012-13 to pre… Deriv…</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;  2 dim_player_year         Player Years Bridge tab… One … All player-sea… Deriv…</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;  3 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;  4 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  5 basketball_all_seasons… All Seasons… Season-lev… One … All conference… Scrap…</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;  6 basketball_all_seasons… All Seasons… Season-lev… One … All conference… Scrap…</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;  7 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;  8 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt;  9 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; 10 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 11 basketball_game_high_i… Individual … Highest si… One … All seasons re… Scrap…</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 12 basketball_all_cat_lea… All Categor… Player-sea… One … All seasons re… Scrap…</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: primary_key_candidate &lt;chr&gt;, foreign_keys_needed &lt;chr&gt;,</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; #   likely_uses &lt;chr&gt;, cleaning_priority &lt;chr&gt;, notes &lt;chr&gt;</span></span></code></pre></div>
+<p>We could instead search for other topics:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">cuny_find_tables</span>(<span class="st">&quot;scoring&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2 × 11</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt;   table_name               display_name description grain season_coverage source</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;                    &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt; </span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; 1 basketball_all_seasons_… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; 2 basketball_all_seasons_… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: primary_key_candidate &lt;chr&gt;, foreign_keys_needed &lt;chr&gt;,</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; #   likely_uses &lt;chr&gt;, cleaning_priority &lt;chr&gt;, notes &lt;chr&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="fu">cuny_find_tables</span>(<span class="st">&quot;game&quot;</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; # A tibble: 16 × 11</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;    table_name              display_name description grain season_coverage source</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                   &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt; </span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt;  1 dim_opponents           Opponent Di… Lookup tab… One … 2012-13 to pre… Deriv…</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt;  2 dim_games               Game Dimens… Lookup tab… One … 2012-13 to pre… Deriv…</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt;  3 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt;  4 basketball_all_seasons… All Seasons… Season-lev… One … All conference… Scrap…</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt;  5 basketball_all_seasons… All Seasons… Season-lev… One … All conference… Scrap…</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;  6 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt;  7 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt;  8 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt;  9 basketball_game_by_gam… Game-by-Gam… Game-level… One … All game-level… Scrap…</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 10 basketball_game_by_gam… Game-by-Gam… Game-level… One … All game-level… Scrap…</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 11 basketball_game_by_gam… Game-by-Gam… Game-level… One … All game-level… Scrap…</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 12 basketball_game_by_gam… Game-by-Gam… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 13 basketball_game_by_gam… Game-by-Gam… Game-level… One … All game-level… Scrap…</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; 14 basketball_game_high_t… Team Game H… Highest si… One … All seasons re… Scrap…</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 15 basketball_game_high_i… Individual … Highest si… One … All seasons re… Scrap…</span></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co">#&gt; 16 basketball_all_cat_lea… All Categor… Player-sea… One … All seasons re… Scrap…</span></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: primary_key_candidate &lt;chr&gt;, foreign_keys_needed &lt;chr&gt;,</span></span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt; #   likely_uses &lt;chr&gt;, cleaning_priority &lt;chr&gt;, notes &lt;chr&gt;</span></span></code></pre></div>
+<p>This provides a convenient way to discover relevant tables without
+memorizing database table names.</p>
+</div>
+</div>
+<div id="understanding-a-table" class="section level2">
+<h2>Understanding a Table</h2>
+<p>After identifying a table of interest, the next step is understanding
+what it contains.</p>
+<p>For this vignette, we will use:</p>
+<p><code>basketball_all_seasons_player_overall_final</code></p>
+<p>This table contains season-level overall player statistics for CUNY
+basketball.</p>
+<div id="the-cuny_table_info-function" class="section level3">
+<h3>The <code>cuny_table_info()</code> function</h3>
+<p>The <code>cuny_table_info()</code> function provides table-level
+documentation.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">cuny_table_info</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_overall_final&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 11</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt;   table_name               display_name description grain season_coverage source</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;                    &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt; </span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; 1 basketball_all_seasons_… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: primary_key_candidate &lt;chr&gt;, foreign_keys_needed &lt;chr&gt;,</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt; #   likely_uses &lt;chr&gt;, cleaning_priority &lt;chr&gt;, notes &lt;chr&gt;</span></span></code></pre></div>
+<p>The returned information describes characteristics such as the
+table’s:</p>
+<ul>
+<li>Description</li>
+<li>Grain</li>
+<li>Season coverage</li>
+<li>Source</li>
+<li>Potential keys and relationships</li>
+<li>Likely analytical uses</li>
+<li>Additional notes</li>
+</ul>
+<p>This is particularly useful when several tables contain related types
+of statistics.</p>
+</div>
+<div id="the-cuny_columns_info-function" class="section level3">
+<h3>The <code>cuny_columns_info()</code> function</h3>
+<p>Once we understand the purpose of the table, we can inspect its
+individual variables using <code>cuny_columns_info()</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">cuny_columns_info</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_overall_final&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 43 × 8</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt;    table_name  column_name suggested_name data_type description example key_type</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;          &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;   </span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt;  1 basketball… jersey_num… jersey_number  character Jersey num… 1.0     Descrip…</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt;  2 basketball… player_name player_name    character Human-read… Joe Ch… Descrip…</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt;  3 basketball… season_lab… season_label   character Human-read… 2025-26 Descrip…</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt;  4 basketball… games_play… games_played   integer   Number of … 26.0    Measure </span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt;  5 basketball… games_star… games_started  integer   Number of … 26.0    Measure </span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt;  6 basketball… total_minu… total_minutes  numeric   Total minu… 790.0   Measure </span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt;  7 basketball… minutes_pe… minutes_per_g… numeric   Average mi… 30.4    Measure </span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt;  8 basketball… field_goal… field_goals_m… integer   Total fiel… 122.0   Measure </span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt;  9 basketball… field_goal… field_goal_at… integer   Total fiel… 374.0   Measure </span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; 10 basketball… field_goal… field_goal_pe… numeric   Proportion… 0.326   Measure </span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">#&gt; # ℹ 33 more rows</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="co">#&gt; # ℹ 1 more variable: notes &lt;chr&gt;</span></span></code></pre></div>
+<p>The column catalog provides information about each documented
+variable, including:</p>
+<ul>
+<li>Column name</li>
+<li>Suggested name</li>
+<li>Data type</li>
+<li>Description</li>
+<li>Example values</li>
+<li>Key type</li>
+<li>Additional notes</li>
+</ul>
+<p>Together, <code>cuny_table_info()</code> and
+<code>cuny_columns_info()</code> allow users to understand the structure
+of the data before beginning an analysis.</p>
+</div>
+</div>
+<div id="retrieving-data" class="section level2">
+<h2>Retrieving Data</h2>
+<p>Once we have identified and documented the table we want, we can
+retrieve it using <code>cuny_pull_table()</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>player_stats <span class="ot">&lt;-</span> <span class="fu">cuny_pull_table</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_overall_final&quot;</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>)</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>player_stats <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt;   jersey_number     player_name season_label games_played games_started</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; 1            11   Jamir Stewart      2025-26           27            26</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; 2            00 Keyshawn Miller      2025-26           26            25</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; 3            10    Aidony Nivar      2025-26           16            12</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt; 4            02    Adrian Kopec      2025-26           27            27</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; 5            24 Ronnie McIntyre      2025-26           25            10</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt; 6            23    Amare Jordan      2025-26           27            12</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt;   total_minutes minutes_per_game field_goals_made field_goal_attempts</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt; 1           897             33.2              137                 348</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt; 2           948             36.5              149                 357</span></span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt; 3           506             31.6               75                 184</span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#&gt; 4           943             34.9              100                 280</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co">#&gt; 5           584             23.4               61                 179</span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#&gt; 6           571             21.1               58                 105</span></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="co">#&gt;   field_goal_percentage three_pointers_made three_point_attempts</span></span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="co">#&gt; 1                 0.394                  69                  186</span></span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="co">#&gt; 2                 0.417                  30                   95</span></span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a><span class="co">#&gt; 3                 0.408                  43                  112</span></span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a><span class="co">#&gt; 4                 0.357                  54                  166</span></span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a><span class="co">#&gt; 5                 0.341                  35                  100</span></span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a><span class="co">#&gt; 6                 0.552                   6                   17</span></span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a><span class="co">#&gt;   three_point_percentage free_throws_made free_throw_attempts</span></span>
+<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a><span class="co">#&gt; 1                  0.371              122                 150</span></span>
+<span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a><span class="co">#&gt; 2                  0.316               80                 153</span></span>
+<span id="cb7-31"><a href="#cb7-31" tabindex="-1"></a><span class="co">#&gt; 3                  0.384               25                  35</span></span>
+<span id="cb7-32"><a href="#cb7-32" tabindex="-1"></a><span class="co">#&gt; 4                  0.325               24                  35</span></span>
+<span id="cb7-33"><a href="#cb7-33" tabindex="-1"></a><span class="co">#&gt; 5                  0.350                9                  14</span></span>
+<span id="cb7-34"><a href="#cb7-34" tabindex="-1"></a><span class="co">#&gt; 6                  0.353               37                  69</span></span>
+<span id="cb7-35"><a href="#cb7-35" tabindex="-1"></a><span class="co">#&gt;   free_throw_percentage total_points points_per_game offensive_rebounds</span></span>
+<span id="cb7-36"><a href="#cb7-36" tabindex="-1"></a><span class="co">#&gt; 1                 0.813          465            17.2                 20</span></span>
+<span id="cb7-37"><a href="#cb7-37" tabindex="-1"></a><span class="co">#&gt; 2                 0.523          408            15.7                 39</span></span>
+<span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a><span class="co">#&gt; 3                 0.714          218            13.6                  9</span></span>
+<span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a><span class="co">#&gt; 4                 0.686          278            10.3                 33</span></span>
+<span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a><span class="co">#&gt; 5                 0.643          166             6.6                 15</span></span>
+<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="co">#&gt; 6                 0.536          159             5.9                 30</span></span>
+<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a><span class="co">#&gt;   defensive_rebounds total_rebounds rebounds_per_game personal_fouls assists</span></span>
+<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a><span class="co">#&gt; 1                 65             85               3.1             68      68</span></span>
+<span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a><span class="co">#&gt; 2                178            217               8.3             65     137</span></span>
+<span id="cb7-45"><a href="#cb7-45" tabindex="-1"></a><span class="co">#&gt; 3                 45             54               3.4             39      38</span></span>
+<span id="cb7-46"><a href="#cb7-46" tabindex="-1"></a><span class="co">#&gt; 4                 95            128               4.7             40      67</span></span>
+<span id="cb7-47"><a href="#cb7-47" tabindex="-1"></a><span class="co">#&gt; 5                 73             88               3.5             47      44</span></span>
+<span id="cb7-48"><a href="#cb7-48" tabindex="-1"></a><span class="co">#&gt; 6                 64             94               3.5             56      32</span></span>
+<span id="cb7-49"><a href="#cb7-49" tabindex="-1"></a><span class="co">#&gt;   turnovers steals blocks effective_field_goal_percentage</span></span>
+<span id="cb7-50"><a href="#cb7-50" tabindex="-1"></a><span class="co">#&gt; 1        87     31      6                           0.493</span></span>
+<span id="cb7-51"><a href="#cb7-51" tabindex="-1"></a><span class="co">#&gt; 2        75     83     22                           0.459</span></span>
+<span id="cb7-52"><a href="#cb7-52" tabindex="-1"></a><span class="co">#&gt; 3        23     20      3                           0.524</span></span>
+<span id="cb7-53"><a href="#cb7-53" tabindex="-1"></a><span class="co">#&gt; 4        56     17      4                           0.454</span></span>
+<span id="cb7-54"><a href="#cb7-54" tabindex="-1"></a><span class="co">#&gt; 5        38     18      9                           0.439</span></span>
+<span id="cb7-55"><a href="#cb7-55" tabindex="-1"></a><span class="co">#&gt; 6        37     21     10                           0.581</span></span>
+<span id="cb7-56"><a href="#cb7-56" tabindex="-1"></a><span class="co">#&gt;   true_shooting_percentage three_point_attempt_rate free_throw_rate</span></span>
+<span id="cb7-57"><a href="#cb7-57" tabindex="-1"></a><span class="co">#&gt; 1                    0.562                    0.534           0.431</span></span>
+<span id="cb7-58"><a href="#cb7-58" tabindex="-1"></a><span class="co">#&gt; 2                    0.481                    0.266           0.429</span></span>
+<span id="cb7-59"><a href="#cb7-59" tabindex="-1"></a><span class="co">#&gt; 3                    0.547                    0.609           0.190</span></span>
+<span id="cb7-60"><a href="#cb7-60" tabindex="-1"></a><span class="co">#&gt; 4                    0.471                    0.593           0.125</span></span>
+<span id="cb7-61"><a href="#cb7-61" tabindex="-1"></a><span class="co">#&gt; 5                    0.448                    0.559           0.078</span></span>
+<span id="cb7-62"><a href="#cb7-62" tabindex="-1"></a><span class="co">#&gt; 6                    0.587                    0.162           0.657</span></span>
+<span id="cb7-63"><a href="#cb7-63" tabindex="-1"></a><span class="co">#&gt;   assist_turnover_ratio offensive_rebound_share points_per_game_alt</span></span>
+<span id="cb7-64"><a href="#cb7-64" tabindex="-1"></a><span class="co">#&gt; 1                 0.782                   0.235                17.2</span></span>
+<span id="cb7-65"><a href="#cb7-65" tabindex="-1"></a><span class="co">#&gt; 2                 1.827                   0.180                15.7</span></span>
+<span id="cb7-66"><a href="#cb7-66" tabindex="-1"></a><span class="co">#&gt; 3                 1.652                   0.167                13.6</span></span>
+<span id="cb7-67"><a href="#cb7-67" tabindex="-1"></a><span class="co">#&gt; 4                 1.196                   0.258                10.3</span></span>
+<span id="cb7-68"><a href="#cb7-68" tabindex="-1"></a><span class="co">#&gt; 5                 1.158                   0.170                 6.6</span></span>
+<span id="cb7-69"><a href="#cb7-69" tabindex="-1"></a><span class="co">#&gt; 6                 0.865                   0.319                 5.9</span></span>
+<span id="cb7-70"><a href="#cb7-70" tabindex="-1"></a><span class="co">#&gt;   points_per_40_minutes split_type           school gender season_id school_id</span></span>
+<span id="cb7-71"><a href="#cb7-71" tabindex="-1"></a><span class="co">#&gt; 1                  20.7    overall johnjayathletics      M        21         6</span></span>
+<span id="cb7-72"><a href="#cb7-72" tabindex="-1"></a><span class="co">#&gt; 2                  17.2    overall johnjayathletics      M        21         6</span></span>
+<span id="cb7-73"><a href="#cb7-73" tabindex="-1"></a><span class="co">#&gt; 3                  17.2    overall johnjayathletics      M        21         6</span></span>
+<span id="cb7-74"><a href="#cb7-74" tabindex="-1"></a><span class="co">#&gt; 4                  11.8    overall johnjayathletics      M        21         6</span></span>
+<span id="cb7-75"><a href="#cb7-75" tabindex="-1"></a><span class="co">#&gt; 5                  11.4    overall johnjayathletics      M        21         6</span></span>
+<span id="cb7-76"><a href="#cb7-76" tabindex="-1"></a><span class="co">#&gt; 6                  11.1    overall johnjayathletics      M        21         6</span></span>
+<span id="cb7-77"><a href="#cb7-77" tabindex="-1"></a><span class="co">#&gt;   player_id year_with_team</span></span>
+<span id="cb7-78"><a href="#cb7-78" tabindex="-1"></a><span class="co">#&gt; 1      1261              4</span></span>
+<span id="cb7-79"><a href="#cb7-79" tabindex="-1"></a><span class="co">#&gt; 2      1305              2</span></span>
+<span id="cb7-80"><a href="#cb7-80" tabindex="-1"></a><span class="co">#&gt; 3      1160              1</span></span>
+<span id="cb7-81"><a href="#cb7-81" tabindex="-1"></a><span class="co">#&gt; 4      1159              4</span></span>
+<span id="cb7-82"><a href="#cb7-82" tabindex="-1"></a><span class="co">#&gt; 5      1352              1</span></span>
+<span id="cb7-83"><a href="#cb7-83" tabindex="-1"></a><span class="co">#&gt; 6      1170              3</span></span></code></pre></div>
+<p>The result is returned to R and can be used with familiar tools from
+packages such as <code>dplyr</code>, <code>tidyr</code>, and
+<code>ggplot2</code>.</p>
+<p>For example, men’s and women’s basketball records are stored together
+and can be distinguished using the <code>gender</code> column.</p>
+<p>To work with women’s basketball:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>womens_player_stats <span class="ot">&lt;-</span> player_stats <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="st">&quot;W&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>womens_player_stats <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt;   jersey_number        player_name season_label games_played games_started</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; 1            01 Michaela Lattimore      2025-26           26            26</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; 2            05     Bryan Bascones      2025-26           26            24</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; 3            23      Briana Minick      2025-26           27            24</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; 4            12    Natalie Simonds      2025-26           27            27</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt; 5            30      Miah Crockett      2025-26           25            22</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; 6            04 Essence Richardson      2025-26           27             8</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt;   total_minutes minutes_per_game field_goals_made field_goal_attempts</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; 1           718             27.6              161                 332</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; 2           738             28.4              104                 238</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; 3           593             22.0               87                 279</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; 4           778             28.8               69                 215</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt; 5           604             24.2               69                 203</span></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="co">#&gt; 6           644             23.9               80                 216</span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="co">#&gt;   field_goal_percentage three_pointers_made three_point_attempts</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">#&gt; 1                 0.485                   0                    0</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="co">#&gt; 2                 0.437                   1                    8</span></span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="co">#&gt; 3                 0.312                  11                   49</span></span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="co">#&gt; 4                 0.321                  14                   48</span></span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="co">#&gt; 5                 0.340                  13                   50</span></span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="co">#&gt; 6                 0.370                  27                   98</span></span>
+<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="co">#&gt;   three_point_percentage free_throws_made free_throw_attempts</span></span>
+<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="co">#&gt; 1                  0.000               84                 118</span></span>
+<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a><span class="co">#&gt; 2                  0.125               36                  61</span></span>
+<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a><span class="co">#&gt; 3                  0.224               52                  82</span></span>
+<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a><span class="co">#&gt; 4                  0.292               80                 107</span></span>
+<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a><span class="co">#&gt; 5                  0.260               65                  86</span></span>
+<span id="cb8-33"><a href="#cb8-33" tabindex="-1"></a><span class="co">#&gt; 6                  0.276               19                  34</span></span>
+<span id="cb8-34"><a href="#cb8-34" tabindex="-1"></a><span class="co">#&gt;   free_throw_percentage total_points points_per_game offensive_rebounds</span></span>
+<span id="cb8-35"><a href="#cb8-35" tabindex="-1"></a><span class="co">#&gt; 1                 0.712          406            15.6                111</span></span>
+<span id="cb8-36"><a href="#cb8-36" tabindex="-1"></a><span class="co">#&gt; 2                 0.590          245             9.4                 76</span></span>
+<span id="cb8-37"><a href="#cb8-37" tabindex="-1"></a><span class="co">#&gt; 3                 0.634          237             8.8                 28</span></span>
+<span id="cb8-38"><a href="#cb8-38" tabindex="-1"></a><span class="co">#&gt; 4                 0.748          232             8.6                 27</span></span>
+<span id="cb8-39"><a href="#cb8-39" tabindex="-1"></a><span class="co">#&gt; 5                 0.756          216             8.6                 38</span></span>
+<span id="cb8-40"><a href="#cb8-40" tabindex="-1"></a><span class="co">#&gt; 6                 0.559          206             7.6                 36</span></span>
+<span id="cb8-41"><a href="#cb8-41" tabindex="-1"></a><span class="co">#&gt;   defensive_rebounds total_rebounds rebounds_per_game personal_fouls assists</span></span>
+<span id="cb8-42"><a href="#cb8-42" tabindex="-1"></a><span class="co">#&gt; 1                274            385              14.8             79      43</span></span>
+<span id="cb8-43"><a href="#cb8-43" tabindex="-1"></a><span class="co">#&gt; 2                 96            172               6.6             31      32</span></span>
+<span id="cb8-44"><a href="#cb8-44" tabindex="-1"></a><span class="co">#&gt; 3                 86            114               4.2             50      66</span></span>
+<span id="cb8-45"><a href="#cb8-45" tabindex="-1"></a><span class="co">#&gt; 4                103            130               4.8             74      99</span></span>
+<span id="cb8-46"><a href="#cb8-46" tabindex="-1"></a><span class="co">#&gt; 5                 52             90               3.6             65      40</span></span>
+<span id="cb8-47"><a href="#cb8-47" tabindex="-1"></a><span class="co">#&gt; 6                 93            129               4.8             27      45</span></span>
+<span id="cb8-48"><a href="#cb8-48" tabindex="-1"></a><span class="co">#&gt;   turnovers steals blocks effective_field_goal_percentage</span></span>
+<span id="cb8-49"><a href="#cb8-49" tabindex="-1"></a><span class="co">#&gt; 1        63     40     39                           0.485</span></span>
+<span id="cb8-50"><a href="#cb8-50" tabindex="-1"></a><span class="co">#&gt; 2        34     22      8                           0.439</span></span>
+<span id="cb8-51"><a href="#cb8-51" tabindex="-1"></a><span class="co">#&gt; 3        95     51      2                           0.332</span></span>
+<span id="cb8-52"><a href="#cb8-52" tabindex="-1"></a><span class="co">#&gt; 4       115     43     13                           0.353</span></span>
+<span id="cb8-53"><a href="#cb8-53" tabindex="-1"></a><span class="co">#&gt; 5        67     33      4                           0.372</span></span>
+<span id="cb8-54"><a href="#cb8-54" tabindex="-1"></a><span class="co">#&gt; 6        45     38      3                           0.433</span></span>
+<span id="cb8-55"><a href="#cb8-55" tabindex="-1"></a><span class="co">#&gt;   true_shooting_percentage three_point_attempt_rate free_throw_rate</span></span>
+<span id="cb8-56"><a href="#cb8-56" tabindex="-1"></a><span class="co">#&gt; 1                    0.529                    0.000           0.355</span></span>
+<span id="cb8-57"><a href="#cb8-57" tabindex="-1"></a><span class="co">#&gt; 2                    0.463                    0.034           0.256</span></span>
+<span id="cb8-58"><a href="#cb8-58" tabindex="-1"></a><span class="co">#&gt; 3                    0.376                    0.176           0.294</span></span>
+<span id="cb8-59"><a href="#cb8-59" tabindex="-1"></a><span class="co">#&gt; 4                    0.443                    0.223           0.498</span></span>
+<span id="cb8-60"><a href="#cb8-60" tabindex="-1"></a><span class="co">#&gt; 5                    0.448                    0.246           0.424</span></span>
+<span id="cb8-61"><a href="#cb8-61" tabindex="-1"></a><span class="co">#&gt; 6                    0.446                    0.454           0.157</span></span>
+<span id="cb8-62"><a href="#cb8-62" tabindex="-1"></a><span class="co">#&gt;   assist_turnover_ratio offensive_rebound_share points_per_game_alt</span></span>
+<span id="cb8-63"><a href="#cb8-63" tabindex="-1"></a><span class="co">#&gt; 1                 0.683                   0.288                15.6</span></span>
+<span id="cb8-64"><a href="#cb8-64" tabindex="-1"></a><span class="co">#&gt; 2                 0.941                   0.442                 9.4</span></span>
+<span id="cb8-65"><a href="#cb8-65" tabindex="-1"></a><span class="co">#&gt; 3                 0.695                   0.246                 8.8</span></span>
+<span id="cb8-66"><a href="#cb8-66" tabindex="-1"></a><span class="co">#&gt; 4                 0.861                   0.208                 8.6</span></span>
+<span id="cb8-67"><a href="#cb8-67" tabindex="-1"></a><span class="co">#&gt; 5                 0.597                   0.422                 8.6</span></span>
+<span id="cb8-68"><a href="#cb8-68" tabindex="-1"></a><span class="co">#&gt; 6                 1.000                   0.279                 7.6</span></span>
+<span id="cb8-69"><a href="#cb8-69" tabindex="-1"></a><span class="co">#&gt;   points_per_40_minutes split_type           school gender season_id school_id</span></span>
+<span id="cb8-70"><a href="#cb8-70" tabindex="-1"></a><span class="co">#&gt; 1                  22.6    overall johnjayathletics      W        21         6</span></span>
+<span id="cb8-71"><a href="#cb8-71" tabindex="-1"></a><span class="co">#&gt; 2                  13.3    overall johnjayathletics      W        21         6</span></span>
+<span id="cb8-72"><a href="#cb8-72" tabindex="-1"></a><span class="co">#&gt; 3                  16.0    overall johnjayathletics      W        21         6</span></span>
+<span id="cb8-73"><a href="#cb8-73" tabindex="-1"></a><span class="co">#&gt; 4                  11.9    overall johnjayathletics      W        21         6</span></span>
+<span id="cb8-74"><a href="#cb8-74" tabindex="-1"></a><span class="co">#&gt; 5                  14.3    overall johnjayathletics      W        21         6</span></span>
+<span id="cb8-75"><a href="#cb8-75" tabindex="-1"></a><span class="co">#&gt; 6                  12.8    overall johnjayathletics      W        21         6</span></span>
+<span id="cb8-76"><a href="#cb8-76" tabindex="-1"></a><span class="co">#&gt;   player_id year_with_team</span></span>
+<span id="cb8-77"><a href="#cb8-77" tabindex="-1"></a><span class="co">#&gt; 1      1330              3</span></span>
+<span id="cb8-78"><a href="#cb8-78" tabindex="-1"></a><span class="co">#&gt; 2      1196              1</span></span>
+<span id="cb8-79"><a href="#cb8-79" tabindex="-1"></a><span class="co">#&gt; 3      1192              2</span></span>
+<span id="cb8-80"><a href="#cb8-80" tabindex="-1"></a><span class="co">#&gt; 4      1338              4</span></span>
+<span id="cb8-81"><a href="#cb8-81" tabindex="-1"></a><span class="co">#&gt; 5      1327              1</span></span>
+<span id="cb8-82"><a href="#cb8-82" tabindex="-1"></a><span class="co">#&gt; 6      1237              2</span></span></code></pre></div>
+<p>Similarly, men’s basketball can be selected using:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>mens_player_stats <span class="ot">&lt;-</span> player_stats <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="st">&quot;M&quot;</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>mens_player_stats <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co">#&gt;   jersey_number     player_name season_label games_played games_started</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co">#&gt; 1            11   Jamir Stewart      2025-26           27            26</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">#&gt; 2            00 Keyshawn Miller      2025-26           26            25</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">#&gt; 3            10    Aidony Nivar      2025-26           16            12</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt; 4            02    Adrian Kopec      2025-26           27            27</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt; 5            24 Ronnie McIntyre      2025-26           25            10</span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co">#&gt; 6            23    Amare Jordan      2025-26           27            12</span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt;   total_minutes minutes_per_game field_goals_made field_goal_attempts</span></span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="co">#&gt; 1           897             33.2              137                 348</span></span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="co">#&gt; 2           948             36.5              149                 357</span></span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a><span class="co">#&gt; 3           506             31.6               75                 184</span></span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a><span class="co">#&gt; 4           943             34.9              100                 280</span></span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a><span class="co">#&gt; 5           584             23.4               61                 179</span></span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a><span class="co">#&gt; 6           571             21.1               58                 105</span></span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a><span class="co">#&gt;   field_goal_percentage three_pointers_made three_point_attempts</span></span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a><span class="co">#&gt; 1                 0.394                  69                  186</span></span>
+<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a><span class="co">#&gt; 2                 0.417                  30                   95</span></span>
+<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a><span class="co">#&gt; 3                 0.408                  43                  112</span></span>
+<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a><span class="co">#&gt; 4                 0.357                  54                  166</span></span>
+<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a><span class="co">#&gt; 5                 0.341                  35                  100</span></span>
+<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a><span class="co">#&gt; 6                 0.552                   6                   17</span></span>
+<span id="cb9-27"><a href="#cb9-27" tabindex="-1"></a><span class="co">#&gt;   three_point_percentage free_throws_made free_throw_attempts</span></span>
+<span id="cb9-28"><a href="#cb9-28" tabindex="-1"></a><span class="co">#&gt; 1                  0.371              122                 150</span></span>
+<span id="cb9-29"><a href="#cb9-29" tabindex="-1"></a><span class="co">#&gt; 2                  0.316               80                 153</span></span>
+<span id="cb9-30"><a href="#cb9-30" tabindex="-1"></a><span class="co">#&gt; 3                  0.384               25                  35</span></span>
+<span id="cb9-31"><a href="#cb9-31" tabindex="-1"></a><span class="co">#&gt; 4                  0.325               24                  35</span></span>
+<span id="cb9-32"><a href="#cb9-32" tabindex="-1"></a><span class="co">#&gt; 5                  0.350                9                  14</span></span>
+<span id="cb9-33"><a href="#cb9-33" tabindex="-1"></a><span class="co">#&gt; 6                  0.353               37                  69</span></span>
+<span id="cb9-34"><a href="#cb9-34" tabindex="-1"></a><span class="co">#&gt;   free_throw_percentage total_points points_per_game offensive_rebounds</span></span>
+<span id="cb9-35"><a href="#cb9-35" tabindex="-1"></a><span class="co">#&gt; 1                 0.813          465            17.2                 20</span></span>
+<span id="cb9-36"><a href="#cb9-36" tabindex="-1"></a><span class="co">#&gt; 2                 0.523          408            15.7                 39</span></span>
+<span id="cb9-37"><a href="#cb9-37" tabindex="-1"></a><span class="co">#&gt; 3                 0.714          218            13.6                  9</span></span>
+<span id="cb9-38"><a href="#cb9-38" tabindex="-1"></a><span class="co">#&gt; 4                 0.686          278            10.3                 33</span></span>
+<span id="cb9-39"><a href="#cb9-39" tabindex="-1"></a><span class="co">#&gt; 5                 0.643          166             6.6                 15</span></span>
+<span id="cb9-40"><a href="#cb9-40" tabindex="-1"></a><span class="co">#&gt; 6                 0.536          159             5.9                 30</span></span>
+<span id="cb9-41"><a href="#cb9-41" tabindex="-1"></a><span class="co">#&gt;   defensive_rebounds total_rebounds rebounds_per_game personal_fouls assists</span></span>
+<span id="cb9-42"><a href="#cb9-42" tabindex="-1"></a><span class="co">#&gt; 1                 65             85               3.1             68      68</span></span>
+<span id="cb9-43"><a href="#cb9-43" tabindex="-1"></a><span class="co">#&gt; 2                178            217               8.3             65     137</span></span>
+<span id="cb9-44"><a href="#cb9-44" tabindex="-1"></a><span class="co">#&gt; 3                 45             54               3.4             39      38</span></span>
+<span id="cb9-45"><a href="#cb9-45" tabindex="-1"></a><span class="co">#&gt; 4                 95            128               4.7             40      67</span></span>
+<span id="cb9-46"><a href="#cb9-46" tabindex="-1"></a><span class="co">#&gt; 5                 73             88               3.5             47      44</span></span>
+<span id="cb9-47"><a href="#cb9-47" tabindex="-1"></a><span class="co">#&gt; 6                 64             94               3.5             56      32</span></span>
+<span id="cb9-48"><a href="#cb9-48" tabindex="-1"></a><span class="co">#&gt;   turnovers steals blocks effective_field_goal_percentage</span></span>
+<span id="cb9-49"><a href="#cb9-49" tabindex="-1"></a><span class="co">#&gt; 1        87     31      6                           0.493</span></span>
+<span id="cb9-50"><a href="#cb9-50" tabindex="-1"></a><span class="co">#&gt; 2        75     83     22                           0.459</span></span>
+<span id="cb9-51"><a href="#cb9-51" tabindex="-1"></a><span class="co">#&gt; 3        23     20      3                           0.524</span></span>
+<span id="cb9-52"><a href="#cb9-52" tabindex="-1"></a><span class="co">#&gt; 4        56     17      4                           0.454</span></span>
+<span id="cb9-53"><a href="#cb9-53" tabindex="-1"></a><span class="co">#&gt; 5        38     18      9                           0.439</span></span>
+<span id="cb9-54"><a href="#cb9-54" tabindex="-1"></a><span class="co">#&gt; 6        37     21     10                           0.581</span></span>
+<span id="cb9-55"><a href="#cb9-55" tabindex="-1"></a><span class="co">#&gt;   true_shooting_percentage three_point_attempt_rate free_throw_rate</span></span>
+<span id="cb9-56"><a href="#cb9-56" tabindex="-1"></a><span class="co">#&gt; 1                    0.562                    0.534           0.431</span></span>
+<span id="cb9-57"><a href="#cb9-57" tabindex="-1"></a><span class="co">#&gt; 2                    0.481                    0.266           0.429</span></span>
+<span id="cb9-58"><a href="#cb9-58" tabindex="-1"></a><span class="co">#&gt; 3                    0.547                    0.609           0.190</span></span>
+<span id="cb9-59"><a href="#cb9-59" tabindex="-1"></a><span class="co">#&gt; 4                    0.471                    0.593           0.125</span></span>
+<span id="cb9-60"><a href="#cb9-60" tabindex="-1"></a><span class="co">#&gt; 5                    0.448                    0.559           0.078</span></span>
+<span id="cb9-61"><a href="#cb9-61" tabindex="-1"></a><span class="co">#&gt; 6                    0.587                    0.162           0.657</span></span>
+<span id="cb9-62"><a href="#cb9-62" tabindex="-1"></a><span class="co">#&gt;   assist_turnover_ratio offensive_rebound_share points_per_game_alt</span></span>
+<span id="cb9-63"><a href="#cb9-63" tabindex="-1"></a><span class="co">#&gt; 1                 0.782                   0.235                17.2</span></span>
+<span id="cb9-64"><a href="#cb9-64" tabindex="-1"></a><span class="co">#&gt; 2                 1.827                   0.180                15.7</span></span>
+<span id="cb9-65"><a href="#cb9-65" tabindex="-1"></a><span class="co">#&gt; 3                 1.652                   0.167                13.6</span></span>
+<span id="cb9-66"><a href="#cb9-66" tabindex="-1"></a><span class="co">#&gt; 4                 1.196                   0.258                10.3</span></span>
+<span id="cb9-67"><a href="#cb9-67" tabindex="-1"></a><span class="co">#&gt; 5                 1.158                   0.170                 6.6</span></span>
+<span id="cb9-68"><a href="#cb9-68" tabindex="-1"></a><span class="co">#&gt; 6                 0.865                   0.319                 5.9</span></span>
+<span id="cb9-69"><a href="#cb9-69" tabindex="-1"></a><span class="co">#&gt;   points_per_40_minutes split_type           school gender season_id school_id</span></span>
+<span id="cb9-70"><a href="#cb9-70" tabindex="-1"></a><span class="co">#&gt; 1                  20.7    overall johnjayathletics      M        21         6</span></span>
+<span id="cb9-71"><a href="#cb9-71" tabindex="-1"></a><span class="co">#&gt; 2                  17.2    overall johnjayathletics      M        21         6</span></span>
+<span id="cb9-72"><a href="#cb9-72" tabindex="-1"></a><span class="co">#&gt; 3                  17.2    overall johnjayathletics      M        21         6</span></span>
+<span id="cb9-73"><a href="#cb9-73" tabindex="-1"></a><span class="co">#&gt; 4                  11.8    overall johnjayathletics      M        21         6</span></span>
+<span id="cb9-74"><a href="#cb9-74" tabindex="-1"></a><span class="co">#&gt; 5                  11.4    overall johnjayathletics      M        21         6</span></span>
+<span id="cb9-75"><a href="#cb9-75" tabindex="-1"></a><span class="co">#&gt; 6                  11.1    overall johnjayathletics      M        21         6</span></span>
+<span id="cb9-76"><a href="#cb9-76" tabindex="-1"></a><span class="co">#&gt;   player_id year_with_team</span></span>
+<span id="cb9-77"><a href="#cb9-77" tabindex="-1"></a><span class="co">#&gt; 1      1261              4</span></span>
+<span id="cb9-78"><a href="#cb9-78" tabindex="-1"></a><span class="co">#&gt; 2      1305              2</span></span>
+<span id="cb9-79"><a href="#cb9-79" tabindex="-1"></a><span class="co">#&gt; 3      1160              1</span></span>
+<span id="cb9-80"><a href="#cb9-80" tabindex="-1"></a><span class="co">#&gt; 4      1159              4</span></span>
+<span id="cb9-81"><a href="#cb9-81" tabindex="-1"></a><span class="co">#&gt; 5      1352              1</span></span>
+<span id="cb9-82"><a href="#cb9-82" tabindex="-1"></a><span class="co">#&gt; 6      1170              3</span></span></code></pre></div>
+</div>
+<div id="putting-the-workflow-together" class="section level2">
+<h2>Putting the Workflow Together</h2>
+<p>At this point, we have completed the basic <code>CUNYsports</code>
+workflow.</p>
+<p>We:</p>
+<ol style="list-style-type: decimal">
+<li>Discovered available tables using
+<code>cuny_table_names()</code></li>
+<li>Searched for relevant data using
+<code>cuny_find_tables()</code></li>
+<li>Learned about a table using <code>cuny_table_info()</code></li>
+<li>Examined its variables using <code>cuny_columns_info()</code></li>
+<li>Retrieved the data using <code>cuny_pull_table()</code></li>
+</ol>
+<p>In practice, the workflow can be written as:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Discover</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="fu">cuny_find_tables</span>(<span class="st">&quot;player&quot;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 12 × 11</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt;    table_name              display_name description grain season_coverage source</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                   &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt; </span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt;  1 dim_players             Player Dime… Lookup tab… One … 2012-13 to pre… Deriv…</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt;  2 dim_player_year         Player Years Bridge tab… One … All player-sea… Deriv…</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt;  3 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt;  4 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">#&gt;  5 basketball_all_seasons… All Seasons… Season-lev… One … All conference… Scrap…</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co">#&gt;  6 basketball_all_seasons… All Seasons… Season-lev… One … All conference… Scrap…</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt;  7 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt;  8 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="co">#&gt;  9 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="co">#&gt; 10 basketball_all_seasons… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="co">#&gt; 11 basketball_game_high_i… Individual … Highest si… One … All seasons re… Scrap…</span></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="co">#&gt; 12 basketball_all_cat_lea… All Categor… Player-sea… One … All seasons re… Scrap…</span></span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: primary_key_candidate &lt;chr&gt;, foreign_keys_needed &lt;chr&gt;,</span></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="co">#&gt; #   likely_uses &lt;chr&gt;, cleaning_priority &lt;chr&gt;, notes &lt;chr&gt;</span></span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a><span class="co"># Understand</span></span>
+<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a><span class="fu">cuny_table_info</span>(</span>
+<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_overall_final&quot;</span></span>
+<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a>)</span>
+<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 11</span></span>
+<span id="cb10-26"><a href="#cb10-26" tabindex="-1"></a><span class="co">#&gt;   table_name               display_name description grain season_coverage source</span></span>
+<span id="cb10-27"><a href="#cb10-27" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;                    &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt; </span></span>
+<span id="cb10-28"><a href="#cb10-28" tabindex="-1"></a><span class="co">#&gt; 1 basketball_all_seasons_… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb10-29"><a href="#cb10-29" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: primary_key_candidate &lt;chr&gt;, foreign_keys_needed &lt;chr&gt;,</span></span>
+<span id="cb10-30"><a href="#cb10-30" tabindex="-1"></a><span class="co">#&gt; #   likely_uses &lt;chr&gt;, cleaning_priority &lt;chr&gt;, notes &lt;chr&gt;</span></span>
+<span id="cb10-31"><a href="#cb10-31" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" tabindex="-1"></a><span class="fu">cuny_columns_info</span>(</span>
+<span id="cb10-33"><a href="#cb10-33" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_overall_final&quot;</span></span>
+<span id="cb10-34"><a href="#cb10-34" tabindex="-1"></a>)</span>
+<span id="cb10-35"><a href="#cb10-35" tabindex="-1"></a><span class="co">#&gt; # A tibble: 43 × 8</span></span>
+<span id="cb10-36"><a href="#cb10-36" tabindex="-1"></a><span class="co">#&gt;    table_name  column_name suggested_name data_type description example key_type</span></span>
+<span id="cb10-37"><a href="#cb10-37" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;          &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;   </span></span>
+<span id="cb10-38"><a href="#cb10-38" tabindex="-1"></a><span class="co">#&gt;  1 basketball… jersey_num… jersey_number  character Jersey num… 1.0     Descrip…</span></span>
+<span id="cb10-39"><a href="#cb10-39" tabindex="-1"></a><span class="co">#&gt;  2 basketball… player_name player_name    character Human-read… Joe Ch… Descrip…</span></span>
+<span id="cb10-40"><a href="#cb10-40" tabindex="-1"></a><span class="co">#&gt;  3 basketball… season_lab… season_label   character Human-read… 2025-26 Descrip…</span></span>
+<span id="cb10-41"><a href="#cb10-41" tabindex="-1"></a><span class="co">#&gt;  4 basketball… games_play… games_played   integer   Number of … 26.0    Measure </span></span>
+<span id="cb10-42"><a href="#cb10-42" tabindex="-1"></a><span class="co">#&gt;  5 basketball… games_star… games_started  integer   Number of … 26.0    Measure </span></span>
+<span id="cb10-43"><a href="#cb10-43" tabindex="-1"></a><span class="co">#&gt;  6 basketball… total_minu… total_minutes  numeric   Total minu… 790.0   Measure </span></span>
+<span id="cb10-44"><a href="#cb10-44" tabindex="-1"></a><span class="co">#&gt;  7 basketball… minutes_pe… minutes_per_g… numeric   Average mi… 30.4    Measure </span></span>
+<span id="cb10-45"><a href="#cb10-45" tabindex="-1"></a><span class="co">#&gt;  8 basketball… field_goal… field_goals_m… integer   Total fiel… 122.0   Measure </span></span>
+<span id="cb10-46"><a href="#cb10-46" tabindex="-1"></a><span class="co">#&gt;  9 basketball… field_goal… field_goal_at… integer   Total fiel… 374.0   Measure </span></span>
+<span id="cb10-47"><a href="#cb10-47" tabindex="-1"></a><span class="co">#&gt; 10 basketball… field_goal… field_goal_pe… numeric   Proportion… 0.326   Measure </span></span>
+<span id="cb10-48"><a href="#cb10-48" tabindex="-1"></a><span class="co">#&gt; # ℹ 33 more rows</span></span>
+<span id="cb10-49"><a href="#cb10-49" tabindex="-1"></a><span class="co">#&gt; # ℹ 1 more variable: notes &lt;chr&gt;</span></span>
+<span id="cb10-50"><a href="#cb10-50" tabindex="-1"></a></span>
+<span id="cb10-51"><a href="#cb10-51" tabindex="-1"></a><span class="co"># Retrieve</span></span>
+<span id="cb10-52"><a href="#cb10-52" tabindex="-1"></a>players <span class="ot">&lt;-</span> <span class="fu">cuny_pull_table</span>(</span>
+<span id="cb10-53"><a href="#cb10-53" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_overall_final&quot;</span></span>
+<span id="cb10-54"><a href="#cb10-54" tabindex="-1"></a>)</span></code></pre></div>
+<p>From here, the data are ready for analysis.</p>
+</div>
+<div id="real-world-example" class="section level2">
+<h2>Real World Example</h2>
+<p>Suppose we are interested in exploring scoring across CUNY
+basketball.</p>
+<p>Instead of beginning with the underlying athletics websites, scraping
+the data, and standardizing records across schools and seasons, we can
+search the existing CUNY Sports database.</p>
+<p>First, let’s find tables related to scoring.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">cuny_find_tables</span>(<span class="st">&quot;scoring&quot;</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2 × 11</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co">#&gt;   table_name               display_name description grain season_coverage source</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;                    &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt; </span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co">#&gt; 1 basketball_all_seasons_… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="co">#&gt; 2 basketball_all_seasons_… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: primary_key_candidate &lt;chr&gt;, foreign_keys_needed &lt;chr&gt;,</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co">#&gt; #   likely_uses &lt;chr&gt;, cleaning_priority &lt;chr&gt;, notes &lt;chr&gt;</span></span></code></pre></div>
+<p>We can then inspect the player scoring table:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">cuny_table_info</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_scoring_final&quot;</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>)</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 × 11</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt;   table_name               display_name description grain season_coverage source</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;                    &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt; </span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt; 1 basketball_all_seasons_… All Seasons… Season-lev… One … All seasons re… Scrap…</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt; # ℹ 5 more variables: primary_key_candidate &lt;chr&gt;, foreign_keys_needed &lt;chr&gt;,</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#&gt; #   likely_uses &lt;chr&gt;, cleaning_priority &lt;chr&gt;, notes &lt;chr&gt;</span></span></code></pre></div>
+<p>And examine its available columns:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">cuny_columns_info</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_scoring_final&quot;</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>)</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 30 × 8</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt;    table_name  column_name suggested_name data_type description example key_type</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;          &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;   </span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt;  1 basketball… jersey_num… jersey_number  character Jersey num… 1.0     Descrip…</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt;  2 basketball… player_name player_name    character Human-read… Joe Ch… Descrip…</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt;  3 basketball… games_play… games_played   integer   Number of … 26.0    Measure </span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt;  4 basketball… games_star… games_started  integer   Number of … 26.0    Measure </span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt;  5 basketball… total_minu… total_minutes  numeric   Total minu… 790.0   Measure </span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">#&gt;  6 basketball… field_goal… field_goals_m… integer   Total fiel… 122.0   Measure </span></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">#&gt;  7 basketball… field_goal… field_goal_at… integer   Total fiel… 374.0   Measure </span></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co">#&gt;  8 basketball… field_goal… field_goal_pe… numeric   Proportion… 0.326   Measure </span></span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co">#&gt;  9 basketball… three_poin… three_pointer… integer   Total thre… 54.0    Measure </span></span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="co">#&gt; 10 basketball… three_poin… three_point_a… integer   Total thre… 147.0   Measure </span></span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="co">#&gt; # ℹ 20 more rows</span></span>
+<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a><span class="co">#&gt; # ℹ 1 more variable: notes &lt;chr&gt;</span></span></code></pre></div>
+<p>Now we can retrieve the data:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>scoring <span class="ot">&lt;-</span> <span class="fu">cuny_pull_table</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_scoring_final&quot;</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>)</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>scoring <span class="sc">|&gt;</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">6</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="co">#&gt;   jersey_number     player_name games_played games_started total_minutes</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co">#&gt; 1            11   Jamir Stewart           27            26           897</span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="co">#&gt; 2            00 Keyshawn Miller           26            25           948</span></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="co">#&gt; 3            10    Aidony Nivar           16            12           506</span></span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="co">#&gt; 4            02    Adrian Kopec           27            27           943</span></span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a><span class="co">#&gt; 5            24 Ronnie McIntyre           25            10           584</span></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="co">#&gt; 6            23    Amare Jordan           27            12           571</span></span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="co">#&gt;   field_goals_made field_goal_attempts field_goal_percentage</span></span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a><span class="co">#&gt; 1              137                 348                 0.394</span></span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a><span class="co">#&gt; 2              149                 357                 0.417</span></span>
+<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a><span class="co">#&gt; 3               75                 184                 0.408</span></span>
+<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a><span class="co">#&gt; 4              100                 280                 0.357</span></span>
+<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a><span class="co">#&gt; 5               61                 179                 0.341</span></span>
+<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a><span class="co">#&gt; 6               58                 105                 0.552</span></span>
+<span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a><span class="co">#&gt;   three_pointers_made three_point_attempts three_point_percentage</span></span>
+<span id="cb14-22"><a href="#cb14-22" tabindex="-1"></a><span class="co">#&gt; 1                  69                  186                  0.371</span></span>
+<span id="cb14-23"><a href="#cb14-23" tabindex="-1"></a><span class="co">#&gt; 2                  30                   95                  0.316</span></span>
+<span id="cb14-24"><a href="#cb14-24" tabindex="-1"></a><span class="co">#&gt; 3                  43                  112                  0.384</span></span>
+<span id="cb14-25"><a href="#cb14-25" tabindex="-1"></a><span class="co">#&gt; 4                  54                  166                  0.325</span></span>
+<span id="cb14-26"><a href="#cb14-26" tabindex="-1"></a><span class="co">#&gt; 5                  35                  100                  0.350</span></span>
+<span id="cb14-27"><a href="#cb14-27" tabindex="-1"></a><span class="co">#&gt; 6                   6                   17                  0.353</span></span>
+<span id="cb14-28"><a href="#cb14-28" tabindex="-1"></a><span class="co">#&gt;   free_throws_made free_throw_attempts free_throw_percentage total_points</span></span>
+<span id="cb14-29"><a href="#cb14-29" tabindex="-1"></a><span class="co">#&gt; 1              122                 150                 0.813          465</span></span>
+<span id="cb14-30"><a href="#cb14-30" tabindex="-1"></a><span class="co">#&gt; 2               80                 153                 0.523          408</span></span>
+<span id="cb14-31"><a href="#cb14-31" tabindex="-1"></a><span class="co">#&gt; 3               25                  35                 0.714          218</span></span>
+<span id="cb14-32"><a href="#cb14-32" tabindex="-1"></a><span class="co">#&gt; 4               24                  35                 0.686          278</span></span>
+<span id="cb14-33"><a href="#cb14-33" tabindex="-1"></a><span class="co">#&gt; 5                9                  14                 0.643          166</span></span>
+<span id="cb14-34"><a href="#cb14-34" tabindex="-1"></a><span class="co">#&gt; 6               37                  69                 0.536          159</span></span>
+<span id="cb14-35"><a href="#cb14-35" tabindex="-1"></a><span class="co">#&gt;   points_per_game season_label effective_field_goal_percentage</span></span>
+<span id="cb14-36"><a href="#cb14-36" tabindex="-1"></a><span class="co">#&gt; 1            17.2      2025-26                           0.493</span></span>
+<span id="cb14-37"><a href="#cb14-37" tabindex="-1"></a><span class="co">#&gt; 2            15.7      2025-26                           0.459</span></span>
+<span id="cb14-38"><a href="#cb14-38" tabindex="-1"></a><span class="co">#&gt; 3            13.6      2025-26                           0.524</span></span>
+<span id="cb14-39"><a href="#cb14-39" tabindex="-1"></a><span class="co">#&gt; 4            10.3      2025-26                           0.454</span></span>
+<span id="cb14-40"><a href="#cb14-40" tabindex="-1"></a><span class="co">#&gt; 5             6.6      2025-26                           0.439</span></span>
+<span id="cb14-41"><a href="#cb14-41" tabindex="-1"></a><span class="co">#&gt; 6             5.9      2025-26                           0.581</span></span>
+<span id="cb14-42"><a href="#cb14-42" tabindex="-1"></a><span class="co">#&gt;   true_shooting_percentage three_point_attempt_rate free_throw_rate</span></span>
+<span id="cb14-43"><a href="#cb14-43" tabindex="-1"></a><span class="co">#&gt; 1                    0.562                    0.534           0.431</span></span>
+<span id="cb14-44"><a href="#cb14-44" tabindex="-1"></a><span class="co">#&gt; 2                    0.481                    0.266           0.429</span></span>
+<span id="cb14-45"><a href="#cb14-45" tabindex="-1"></a><span class="co">#&gt; 3                    0.547                    0.609           0.190</span></span>
+<span id="cb14-46"><a href="#cb14-46" tabindex="-1"></a><span class="co">#&gt; 4                    0.471                    0.593           0.125</span></span>
+<span id="cb14-47"><a href="#cb14-47" tabindex="-1"></a><span class="co">#&gt; 5                    0.448                    0.559           0.078</span></span>
+<span id="cb14-48"><a href="#cb14-48" tabindex="-1"></a><span class="co">#&gt; 6                    0.587                    0.162           0.657</span></span>
+<span id="cb14-49"><a href="#cb14-49" tabindex="-1"></a><span class="co">#&gt;   points_per_40_minutes minutes_per_game split_type           school gender</span></span>
+<span id="cb14-50"><a href="#cb14-50" tabindex="-1"></a><span class="co">#&gt; 1                  20.7             33.2    scoring johnjayathletics      M</span></span>
+<span id="cb14-51"><a href="#cb14-51" tabindex="-1"></a><span class="co">#&gt; 2                  17.2             36.5    scoring johnjayathletics      M</span></span>
+<span id="cb14-52"><a href="#cb14-52" tabindex="-1"></a><span class="co">#&gt; 3                  17.2             31.6    scoring johnjayathletics      M</span></span>
+<span id="cb14-53"><a href="#cb14-53" tabindex="-1"></a><span class="co">#&gt; 4                  11.8             34.9    scoring johnjayathletics      M</span></span>
+<span id="cb14-54"><a href="#cb14-54" tabindex="-1"></a><span class="co">#&gt; 5                  11.4             23.4    scoring johnjayathletics      M</span></span>
+<span id="cb14-55"><a href="#cb14-55" tabindex="-1"></a><span class="co">#&gt; 6                  11.1             21.1    scoring johnjayathletics      M</span></span>
+<span id="cb14-56"><a href="#cb14-56" tabindex="-1"></a><span class="co">#&gt;   season_id school_id player_id year_with_team</span></span>
+<span id="cb14-57"><a href="#cb14-57" tabindex="-1"></a><span class="co">#&gt; 1        21         6      1261              4</span></span>
+<span id="cb14-58"><a href="#cb14-58" tabindex="-1"></a><span class="co">#&gt; 2        21         6      1305              2</span></span>
+<span id="cb14-59"><a href="#cb14-59" tabindex="-1"></a><span class="co">#&gt; 3        21         6      1160              1</span></span>
+<span id="cb14-60"><a href="#cb14-60" tabindex="-1"></a><span class="co">#&gt; 4        21         6      1159              4</span></span>
+<span id="cb14-61"><a href="#cb14-61" tabindex="-1"></a><span class="co">#&gt; 5        21         6      1352              1</span></span>
+<span id="cb14-62"><a href="#cb14-62" tabindex="-1"></a><span class="co">#&gt; 6        21         6      1170              3</span></span></code></pre></div>
+<p>Because the data are now in R, we can use normal <code>dplyr</code>
+operations to explore them.</p>
+<p>For example, we can examine the distribution of points per game:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>scoring <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(points_per_game)) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="at">players =</span> <span class="fu">n</span>(),</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>    <span class="at">average_ppg =</span> <span class="fu">mean</span>(points_per_game),</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>    <span class="at">median_ppg =</span> <span class="fu">median</span>(points_per_game),</span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>    <span class="at">maximum_ppg =</span> <span class="fu">max</span>(points_per_game)</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>  )</span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a><span class="co">#&gt;   players average_ppg median_ppg maximum_ppg</span></span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="co">#&gt; 1    4031    5.543141          4        30.9</span></span></code></pre></div>
+<p>We can also compare the distribution of scoring between men’s and
+women’s basketball.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>scoring <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(points_per_game)) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">group_by</span>(gender) <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>    <span class="at">players =</span> <span class="fu">n</span>(),</span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>    <span class="at">average_ppg =</span> <span class="fu">mean</span>(points_per_game),</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>    <span class="at">median_ppg =</span> <span class="fu">median</span>(points_per_game),</span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>    <span class="at">maximum_ppg =</span> <span class="fu">max</span>(points_per_game),</span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>  )</span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2 × 5</span></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a><span class="co">#&gt;   gender players average_ppg median_ppg maximum_ppg</span></span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;    &lt;int&gt;       &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;</span></span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a><span class="co">#&gt; 1 M         2245        5.60          4        29.1</span></span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a><span class="co">#&gt; 2 W         1786        5.48          4        30.9</span></span></code></pre></div>
+<div id="mini-analysis" class="section level3">
+<h3>Mini Analysis</h3>
+<p>Finally, we can visualize the distribution of player scoring.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>scoring <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(points_per_game)) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> points_per_game)) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gender) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Player Scoring Across CUNY Basketball&quot;</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Men&#39;s and Women&#39;s Basketball&quot;</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Points Per Game&quot;</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Number of Player-Seasons&quot;</span></span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure">
+<img role="img" aria-label="Histogram showing the distribution of player points per game in CUNY basketball, separated into men&#39;s and women&#39;s basketball." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAYAAAB6jN80AAAEDmlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPpu5syskzoPUpqaSDv41lLRsUtGE2uj+ZbNt3CyTbLRBkMns3Z1pJjPj/KRpKT4UQRDBqOCT4P9bwSchaqvtiy2itFCiBIMo+ND6R6HSFwnruTOzu5O4a73L3PnmnO9+595z7t4LkLgsW5beJQIsGq4t5dPis8fmxMQ6dMF90A190C0rjpUqlSYBG+PCv9rt7yDG3tf2t/f/Z+uuUEcBiN2F2Kw4yiLiZQD+FcWyXYAEQfvICddi+AnEO2ycIOISw7UAVxieD/Cyz5mRMohfRSwoqoz+xNuIB+cj9loEB3Pw2448NaitKSLLRck2q5pOI9O9g/t/tkXda8Tbg0+PszB9FN8DuPaXKnKW4YcQn1Xk3HSIry5ps8UQ/2W5aQnxIwBdu7yFcgrxPsRjVXu8HOh0qao30cArp9SZZxDfg3h1wTzKxu5E/LUxX5wKdX5SnAzmDx4A4OIqLbB69yMesE1pKojLjVdoNsfyiPi45hZmAn3uLWdpOtfQOaVmikEs7ovj8hFWpz7EV6mel0L9Xy23FMYlPYZenAx0yDB1/PX6dledmQjikjkXCxqMJS9WtfFCyH9XtSekEF+2dH+P4tzITduTygGfv58a5VCTH5PtXD7EFZiNyUDBhHnsFTBgE0SQIA9pfFtgo6cKGuhooeilaKH41eDs38Ip+f4At1Rq/sjr6NEwQqb/I/DQqsLvaFUjvAx+eWirddAJZnAj1DFJL0mSg/gcIpPkMBkhoyCSJ8lTZIxk0TpKDjXHliJzZPO50dR5ASNSnzeLvIvod0HG/mdkmOC0z8VKnzcQ2M/Yz2vKldduXjp9bleLu0ZWn7vWc+l0JGcaai10yNrUnXLP/8Jf59ewX+c3Wgz+B34Df+vbVrc16zTMVgp9um9bxEfzPU5kPqUtVWxhs6OiWTVW+gIfywB9uXi7CGcGW/zk98k/kmvJ95IfJn/j3uQ+4c5zn3Kfcd+AyF3gLnJfcl9xH3OfR2rUee80a+6vo7EK5mmXUdyfQlrYLTwoZIU9wsPCZEtP6BWGhAlhL3p2N6sTjRdduwbHsG9kq32sgBepc+xurLPW4T9URpYGJ3ym4+8zA05u44QjST8ZIoVtu3qE7fWmdn5LPdqvgcZz8Ww8BWJ8X3w0PhQ/wnCDGd+LvlHs8dRy6bLLDuKMaZ20tZrqisPJ5ONiCq8yKhYM5cCgKOu66Lsc0aYOtZdo5QCwezI4wm9J/v0X23mlZXOfBjj8Jzv3WrY5D+CsA9D7aMs2gGfjve8ArD6mePZSeCfEYt8CONWDw8FXTxrPqx/r9Vt4biXeANh8vV7/+/16ffMD1N8AuKD/A/8leAvFY9bLAAAAOGVYSWZNTQAqAAAACAABh2kABAAAAAEAAAAaAAAAAAACoAIABAAAAAEAAAKgoAMABAAAAAEAAAHgAAAAABJf29wAAEAASURBVHgB7N0HnBRF+v/xh5yjgWAAzjMrCJ4gRtADVEyYczgV8VQwI39OTIg54QmmM5wJI2JAzB4mRBHRQ8GsJAUk5zT/+tbvepydnZnt3Z2Znd791Ou1OzMdqqve3TPzTHVVd7WYS0ZCAAEEEEAAAQQQQCBPAtXztB02gwACCCCAAAIIIICAFyAA5UBAAAEEEEAAAQQQyKsAAWheudkYAggggAACCCCAAAEoxwACCCCAAAIIIIBAXgUIQPPKzcYQQAABBBBAAAEECEA5BhBAAAEEEEAAAQTyKlAzr1vL8cbmzZtn//jHP4pspVq1ata4cWNr1aqVHXnkkbblllvG5w8ePNi/Pvvss+PTCv3J448/bh988IH997//tRYtWliHDh3smGOOsW222SavRf/ss8/s3nvvtcsvv9zatWuX121rY1988YXdfffdtv3229sFF1yQ9+3na4OzZs2yd955x/7zn//Y119/7Y/Xgw8+2I477jirXv2P34///ve//XExfPhwq1OnTrHiffTRR/bwww/b+eefbzvttJOff//999unn35qF198ccrjJ9jHF154od/WrbfealtttZVddtllxfLXhBUrVvh5jRo1smHDhpnee8npn//8p3355ZdFJm+yySa2ww472L777mubbbZZkXnZehHUJVvHqz5rVO4gDRkyxL8fzz333GBSmR+DfXXllVda69atLfl1mTNmRQQQQKCQBHQd0MqSvv32W13TNOa+AGObb755/M8FoH66+8KO3XPPPfHqtm3bNuaC0vjrQn6yfPny2FFHHeXrseOOO8YOPfTQ2J///Gf/WvV78cUX81r8Z555xm97woQJed1usLEzzjgj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BJZuaamR5CQEEEAAAQQQqNwCfzRDVe56Zq12asXTQBW1emnQi65dSAonoFZPdyF4c/0SzfWz9QG8Ru7rHuSuKwDBZzhGlkIAAQQQQCDyArSAlmEXasS1ruvn+uflZLR4GYoUqVV0KSSNDtYoZ10XVTcJ0B8JAQQQQAABBKqGAAFo1djP1BIBBBBAAAEEECgYAa4DWjC7goIggAACCCCAAAJVQ4AAtGrsZ2qJAAIIIIAAAggUjAABaMHsCgqCAAIIIIAAAghUDQEC0Kqxn6klAggggAACCCBQMAIEoAWzKygIAggggAACCCBQNQQIQKvGfqaWCCCAAAIIIIBAwQjUcBdSv6pgSlPOgvz8889255132sSJE83dx7pYbrp4/K233mruXs5ZuX7nl19+affcc4916tSpVLd4LFawLE14++23zd1XvVjddFvB66+/3ty91E232wySu++13XXXXebu++1vUxlM112edLH4LbbYwpo3bx5MLohH3R5Tt+zULTVVvtIk3ZJ0+PDh5u7P7f9056VffvnF5+XuCV6arNIuq2PikUceSXn8pV0paYb8g1uG6o5RM2bM8LfUTFos1Etd8P/JJ5+0rl27+mvXXnfddf72rU2aNAm1PgshgAACCCCQEwF3/+RKk1xgofva+78pU6YUq9ftt9/u57kv42LzyjLhscce8/m5AKEsq2d9ncGDB8fcrSxT5rv55pvHrrzyyiLz3G+PmLubU2y//fYrMv3ll1+OufvLx+bNm1dkeiG8cHei8ubuh0Spi/PWW2/F97/q7H6kxNz94b3BfffdV+r8Uq3w6KOPxpo1a5ZqVqhpr7zySizx+DzooINif//730Otm2oh1WuzzTbzsxYtWuTr/8EHH6RalGkIIIAAAgjkTaBSnoLfZptt7JlnnikWsI8aNcrcl3Gx6WWd0LBhQ79q8FjWfPKx3l//+ld7//33i2xq3LhxdvLJJ/vpy5Yti89TC+Guu+5q2WoVjGechSe6nWfdunWtUaNGZc7t8ccfNxeM+np///33dvHFF9ull15quld9Raf//ve/phZrEgIIIIAAApVZoFIGoMcee6w9/fTTRfabTr9+9dVX5lqUikzX6c5//OMfdsABB/hg7M0334zPX7t2rb/dpk7ZX3755darVy8777zzbM6cOX4Z3UaydevW1rRpU/968uTJdvrpp9v+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WSTdjvPzzz+3yy67zF9k/pJLLvEDk4JleUQAAQQQQAABBBBAIFmgVAHot99+a1dddZVtvfXWtscee9hPP/1ko0aNMt1T9D//+Y+98MILfn7yRniNAAIIIIAAAggggEAgEHoQ0n777WfvvPOO6bqeZ511lp188sn+tplBRjod36dPH/vvf/8bTOIRAQQQQAABBBBAAIFiAqED0E6dOtmwYcNs9913L5ZJMEHXA9X9RUkIIIAAAggggAACCKQTCB2A3nLLLbZy5UqbOXOmv2+7Mly/fr0ffDR//nx/p6Qtttgi3XaYjgACCCCAAAIIIICAFwgdgD722GPWr1+/lPeD1yl53aqThAACCCCAAAIIIIBASQKhByFdeumldtRRR9mbb75pjRo18ndFGj58uO8Hev3115e0HeYjgAACCCCAAAIIIOAFQrWALl682F//c+jQof4i9JtssonpHu3nn3++rV692vcNvfXWWyFFAAEEEEAAAQQQQKBEgVAtoBpYVKtWLatbt67PcLvttrP333/fP+/SpYt9/PHHJW6IBRBAAAEEEEAAAQQQkECoAFTBZ4cOHezKK6+0pUuX2i677GLPPvusv+j82LFjrV27dmgigAACCCCAAAIIIBBKINQpeOU0YsQIO/TQQ61bt27+OqC67mfDhg39SPgXX3wx1MZYCAEEEEAAAQQQQACB0AGo7vn+888/25o1a3zgOXnyZHv99detR48e1qZNGyQRQAABBBBAAAEEEAglkDEA1X3eV6xYkTajHXbYwWbNmuUHIm2zzTZpl2MGAggggAACCCCAAAKBQMYA9KSTTrKpU6cGy6Z9PProo+3pp59OO58ZCCCAAAIIIIAAAggEAhkD0I8++sg2bNgQLJv2UYOUSAgggAACCCCAAAIIhBHIGIDqgvNKa9eutYULF9qmm24aJk+WQQABBBBAAAEEEEAgrUDGyzAp8Dz33HOtcePG1qJFC1M/zw8++CBtZsxAAAEEEEAAAQQQQKAkgYwB6L333mv6u/jii23kyJGmC9Ifd9xxGQcmlbRB5iOAAAIIIIAAAghUbYGMp+B1fc9+/fqZbsGptNdee9nOO+9skyZNsr333rtqy1F7BBBAAAEEEEAAgTIJZGwBnT9/vj/tHuS80047me4Dr+uBkhBAAAEEEEAAAQQQKItAxgBUF52vXbt2kXw32mgjTsEX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" alt="Histogram showing the distribution of player points per game in CUNY basketball, separated into men&#39;s and women&#39;s basketball." />
+<p class="caption">
+Distribution of player points per game in CUNY basketball.
+</p>
+</div>
+<p>This simple example demonstrates how <code>CUNYsports</code> allows
+users to move directly from data discovery to analysis using standard R
+workflows.</p>
+</div>
+</div>
+<div id="direct-database-access" class="section level2">
+<h2>Direct Database Access</h2>
+<p>For most users, <code>cuny_pull_table()</code> provides the easiest
+way to retrieve data.</p>
+<p>Advanced users may instead want to interact directly with the SQLite
+database.</p>
+<p>The <code>cuny_db()</code> function opens a database connection:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">cuny_db</span>()</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbListTables</span>(con)</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;basketball_all_cat_leaders_final&quot;                   </span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="co">#&gt;  [2] &quot;basketball_all_seasons_player_averages_final&quot;       </span></span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="co">#&gt;  [3] &quot;basketball_all_seasons_player_conference_final&quot;     </span></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="co">#&gt;  [4] &quot;basketball_all_seasons_player_overall_final&quot;        </span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a><span class="co">#&gt;  [5] &quot;basketball_all_seasons_player_scoring_final&quot;        </span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a><span class="co">#&gt;  [6] &quot;basketball_all_seasons_player_team_averages_final&quot;  </span></span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a><span class="co">#&gt;  [7] &quot;basketball_all_seasons_player_team_conference_final&quot;</span></span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a><span class="co">#&gt;  [8] &quot;basketball_all_seasons_player_team_overall_final&quot;   </span></span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a><span class="co">#&gt;  [9] &quot;basketball_all_seasons_player_team_scoring_final&quot;   </span></span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a><span class="co">#&gt; [10] &quot;basketball_all_seasons_team_final&quot;                  </span></span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a><span class="co">#&gt; [11] &quot;basketball_game_by_game_comparison_final&quot;           </span></span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a><span class="co">#&gt; [12] &quot;basketball_game_by_game_opponents_final&quot;            </span></span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a><span class="co">#&gt; [13] &quot;basketball_game_by_game_opponents_overall_final&quot;    </span></span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a><span class="co">#&gt; [14] &quot;basketball_game_by_game_team_final&quot;                 </span></span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a><span class="co">#&gt; [15] &quot;basketball_game_by_game_team_overall_final&quot;         </span></span>
+<span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a><span class="co">#&gt; [16] &quot;basketball_game_high_individual_final&quot;              </span></span>
+<span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a><span class="co">#&gt; [17] &quot;basketball_game_high_team_final&quot;                    </span></span>
+<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a><span class="co">#&gt; [18] &quot;dim_games&quot;                                          </span></span>
+<span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a><span class="co">#&gt; [19] &quot;dim_opponents&quot;                                      </span></span>
+<span id="cb18-23"><a href="#cb18-23" tabindex="-1"></a><span class="co">#&gt; [20] &quot;dim_player_year&quot;                                    </span></span>
+<span id="cb18-24"><a href="#cb18-24" tabindex="-1"></a><span class="co">#&gt; [21] &quot;dim_players&quot;                                        </span></span>
+<span id="cb18-25"><a href="#cb18-25" tabindex="-1"></a><span class="co">#&gt; [22] &quot;dim_schools&quot;                                        </span></span>
+<span id="cb18-26"><a href="#cb18-26" tabindex="-1"></a><span class="co">#&gt; [23] &quot;dim_seasons&quot;</span></span>
+<span id="cb18-27"><a href="#cb18-27" tabindex="-1"></a></span>
+<span id="cb18-28"><a href="#cb18-28" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbDisconnect</span>(con)</span></code></pre></div>
+<p>This can be particularly useful when users want to perform database
+queries before loading data into memory.</p>
+<p>For example, <code>dplyr</code> can work directly with a database
+table:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">cuny_db</span>()</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>player_db <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tbl</span>(</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>  con,</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>  <span class="st">&quot;basketball_all_seasons_player_overall_final&quot;</span></span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>)</span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1"></a>player_db <span class="sc">|&gt;</span></span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">==</span> <span class="st">&quot;W&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1"></a>  <span class="fu">select</span>(player_name, season_label, school_id, points_per_game) <span class="sc">|&gt;</span></span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1"></a>  <span class="fu">head</span>()</span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1"></a><span class="co">#&gt; # Source:   SQL [?? x 4]</span></span>
+<span id="cb19-13"><a href="#cb19-13" tabindex="-1"></a><span class="co">#&gt; # Database: sqlite 3.53.3 [/private/var/folders/zy/hmwzxgcn60n62sdmsjzprx840000gn/T/Rtmpu5UYZ7/Rinst50d17b8dd96e/CUNYsports/extdata/cuny-sports.db]</span></span>
+<span id="cb19-14"><a href="#cb19-14" tabindex="-1"></a><span class="co">#&gt;   player_name        season_label school_id points_per_game</span></span>
+<span id="cb19-15"><a href="#cb19-15" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;              &lt;chr&gt;            &lt;int&gt;           &lt;dbl&gt;</span></span>
+<span id="cb19-16"><a href="#cb19-16" tabindex="-1"></a><span class="co">#&gt; 1 Michaela Lattimore 2025-26              6            15.6</span></span>
+<span id="cb19-17"><a href="#cb19-17" tabindex="-1"></a><span class="co">#&gt; 2 Bryan Bascones     2025-26              6             9.4</span></span>
+<span id="cb19-18"><a href="#cb19-18" tabindex="-1"></a><span class="co">#&gt; 3 Briana Minick      2025-26              6             8.8</span></span>
+<span id="cb19-19"><a href="#cb19-19" tabindex="-1"></a><span class="co">#&gt; 4 Natalie Simonds    2025-26              6             8.6</span></span>
+<span id="cb19-20"><a href="#cb19-20" tabindex="-1"></a><span class="co">#&gt; 5 Miah Crockett      2025-26              6             8.6</span></span>
+<span id="cb19-21"><a href="#cb19-21" tabindex="-1"></a><span class="co">#&gt; 6 Essence Richardson 2025-26              6             7.6</span></span>
+<span id="cb19-22"><a href="#cb19-22" tabindex="-1"></a></span>
+<span id="cb19-23"><a href="#cb19-23" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbDisconnect</span>(con)</span></code></pre></div>
+<p>This approach allows SQLite to perform operations before the
+resulting data are collected into R.</p>
+</div>
+<div id="rule-of-thumb" class="section level2">
+<h2>Rule of Thumb</h2>
+<p>The package functions serve different parts of the data workflow.</p>
+<p>In general:</p>
+<ul>
+<li>Use <code>cuny_table_names()</code> to see everything available</li>
+<li>Use <code>cuny_find_tables()</code> when you know the topic but not
+the table name</li>
+<li>Use <code>cuny_table_info()</code> to understand what a table
+represents</li>
+<li>Use <code>cuny_columns_info()</code> to understand its
+variables</li>
+<li>Use <code>cuny_pull_table()</code> when you want the complete table
+in R</li>
+<li>Use <code>cuny_db()</code> when you want direct access to the SQLite
+database</li>
+</ul>
+<p>For most analyses, the first five functions will provide everything
+needed to find and begin working with CUNY athletics data.</p>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
+<p><code>CUNYsports</code> provides a centralized interface for
+accessing and exploring CUNY athletics data in R.</p>
+<p>Rather than requiring users to independently scrape and standardize
+statistics across athletics websites, the package provides cleaned data
+through an included SQLite database together with tools for
+understanding its structure.</p>
+<p>The basic workflow is:</p>
+<p><strong>Discover → Understand → Retrieve → Analyze</strong></p>
+<p>As demonstrated in this vignette, users can search for relevant data,
+inspect table and column documentation, retrieve complete datasets, and
+immediately begin analyzing them using familiar R tools.</p>
+<p>Although the initial release focuses on men’s and women’s basketball,
+the underlying database and package infrastructure are designed to
+support additional CUNY sports as the project grows.</p>
+</div>
+<div id="how-to-cite" class="section level2">
+<h2>How to Cite</h2>
+<p>If you use <code>CUNYsports</code> for research or educational
+purposes, please cite it as follows:</p>
+<p>Martinez C (2026). <em>CUNYsports: Access and Explore CUNY Athletics
+Data</em>. R package version 0.1.0.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
