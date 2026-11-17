@@ -1,4 +1,4 @@
-e92d6b95f8a12116439c74879c058ddd *DESCRIPTION
+d81189bb2b2c7a6b5ea522524ccc3333 *DESCRIPTION
 726d1c9f2320afd5126e83cc6dd00a75 *LICENSE
 2c919b81ce0958d73a08596370cfab21 *NAMESPACE
 dc052cd9804ff3b0063e6eedbd37f408 *R/CUNYsports-package.R
@@ -9,14 +9,14 @@ fb12c3af47c68e5058be060479f5e01b *R/cuny_find_tables.R
 5e8e0d23e3b68c3a97bbba088edd65ab *R/cuny_table_info.R
 0ef8b8cb0c6fd2dc129c15ed17084f6a *R/cuny_table_names.R
 00bccbedd9805315d2b80aa8c2880d50 *R/data.R
-3e2e8cf11491fe0597afbdc8a828a4b2 *README.md
+44f718710f52a8f645bad6708e094cc2 *README.md
 62244f22f90dcd989c48694811d52789 *build/vignette.rds
-e9f0701139c1796876ede7dd1ba68799 *data/column_catalog.rda
-7552771121bfddc70e9c8851dbe352a1 *data/table_catalog.rda
+bd8695e0e5b97d5875120ae679a0216d *data/column_catalog.rda
+c4d89034e48f755afce3c0363d2175f9 *data/table_catalog.rda
 b14ba6fd2d1970eedcf9a2db62849326 *inst/doc/getting-started-CUNYsports.R
 55029d09b0a95625818f6330e150db9d *inst/doc/getting-started-CUNYsports.Rmd
-79069b29f713ba3a4b4f8f113782a57e *inst/doc/getting-started-CUNYsports.html
-23910d4b64b0f65bf6b0156735de1d69 *inst/extdata/cuny-sports.db
+4dad13f9456a6e3371179929dafd16b2 *inst/doc/getting-started-CUNYsports.html
+fde2724ece457cb5a7f7d0593ce4fff0 *inst/extdata/cuny-sports.db
 9fbb3e9b16cf213cd6edf154bd33415f *man/CUNYsports-package.Rd
 bbb68f603b732cbb5c3c8362dff52bdf *man/column_catalog.Rd
 71f454d2b76764fbf8dde42b77e4939b *man/cuny_columns_info.Rd
